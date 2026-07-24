@@ -14,8 +14,8 @@ Builder Sprint is a 14-day execution sprint designed to help young builders move
 
 ## Status
 
-🚧 Currently under development.
+✅ Deployed on Cloudflare 
 
 ---
 
-Built with ❤️ by CONTRIBE.
+Built with ❤️ by InsightBolt.
