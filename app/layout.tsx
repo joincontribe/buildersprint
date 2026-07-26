@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // 1️⃣ METADATA EXPORT (For SEO, Titles, OpenGraph)
 export const metadata: Metadata = {
   title: "Builder Sprint | CONTRIBE",
@@ -64,7 +65,10 @@ export const metadata: Metadata = {
                                                                                                                                                                                           }) {
                                                                                                                                                                                             return (
                                                                                                                                                                                                 <html lang="en">
-                                                                                                                                                                                                      <body>{children}</body>
+                                                                                                                                                                                                      <body>{children}
+                                                                                                                                                                                                        <Analytics />
+                                                                                                                                                                                                        <SpeedInsights /> 
+                                                                                                                                                                                                        </body>
                                                                                                                                                                                                           </html>
                                                                                                                                                                                                             );
                                                                                                                                                                                                         }
