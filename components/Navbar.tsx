@@ -12,8 +12,8 @@ export default function Navbar() {
                                                                   <Image
                                                                               src="/logo.png"
                                                                                           alt="CONTRIBE Logo"
-                                                                                                      width={50}
-                                                                                                                  height={50}
+                                                                                                      width={64}
+                                                                                                                  height={64}
                                                                                                                               priority
                                                                                                                                         />
 
