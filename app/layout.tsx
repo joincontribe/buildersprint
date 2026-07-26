@@ -21,12 +21,12 @@ export const metadata: Metadata = {
                                                       authors: [{ name: "Team CONTRIBE" }],
                                                         creator: "CONTRIBE",
                                                           applicationName: "Builder Sprint",
-                                                            metadataBase: new URL("https://contribe.vercel.app"),
+                                                            metadataBase: new URL("https://contribebuildersprint.vercel.app"),
                                                               openGraph: {
                                                                   title: "Builder Sprint | CONTRIBE",
                                                                       description:
                                                                             "Build your first real project in just 14 days with CONTRIBE.",
-                                                                                url: "https://contribe.vercel.app",
+                                                                                url: "https://contribebuildersprint.vercel.app",
                                                                                     siteName: "CONTRIBE",
                                                                                         images: [
                                                                                               {
