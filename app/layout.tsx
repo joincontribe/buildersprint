@@ -1,3 +1,4 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 // 1️⃣ METADATA EXPORT (For SEO, Titles, OpenGraph)
