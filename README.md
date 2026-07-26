@@ -14,7 +14,7 @@ Builder Sprint is a 14-day execution sprint designed to help young builders move
 
 ## Status
 
-✅ Deployed on Cloudflare 
+✅ Deployed on Vercel.
 
 ---
 

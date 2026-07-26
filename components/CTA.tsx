@@ -7,19 +7,19 @@ export default function CTA() {
                                           </h2>
 
                                                   <p className="mt-6 text-xl opacity-90">
-                                                            Applications for Builder Sprint Cohort 1 are now open.
+                                                            Registrations for Builder Sprint Cohort 1 are now open.
                                                                     </p>
 
                                                                             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                                                                                       <a
-                                                                                                  href="YOUR_APPLICATION_LINK"
+                                                                                                  href="https://docs.google.com/forms/d/e/1FAIpQLSecAUHEl8aOmYzpKMsver0eBMEmyAPaL76kgug1_ZzCFoUICQ/viewform?usp=publish-editor"
                                                                                                               className="rounded-xl bg-white px-8 py-4 font-semibold text-orange-500"
                                                                                                                         >
-                                                                                                                                    Apply Now
+                                                                                                                                    Register Now
                                                                                                                                               </a>
 
                                                                                                                                                         <a
-                                                                                                                                                                    href="YOUR_LINKTREE"
+                                                                                                                                                                    href="https://linktr.ee/joincontribe"
                                                                                                                                                                                 className="rounded-xl border border-white px-8 py-4 font-semibold"
                                                                                                                                                                                           >
                                                                                                                                                                                                       Learn About CONTRIBE

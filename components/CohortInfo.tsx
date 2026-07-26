@@ -1,9 +1,9 @@
 export default function CohortInfo() {
       const timeline = [
           {
-                title: "Applications",
+                title: "Registrations",
                       date: "1–31 August",
-                            description: "Submit your application before seats fill.",
+                            description: "Submit your registration before seats fill."
                                 },
                                     {
                                           title: "Onboarding",

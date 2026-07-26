@@ -17,7 +17,7 @@ export default function Survey() {
                                                                                                                   </p>
 
                                                                                                                           <a
-                                                                                                                                    href="YOUR_SURVEY_LINK"
+                                                                                                                                    href="https://docs.google.com/forms/d/e/1FAIpQLSc7VQNBfovz0jX_HrIcd2feFm0jV0VO6lVbKaIDL7zwcr22nw/viewform?usp=header"
                                                                                                                                               target="_blank"
                                                                                                                                                         rel="noopener noreferrer"
                                                                                                                                                                   className="mt-10 inline-block rounded-xl bg-slate-900 px-8 py-4 font-semibold text-white transition hover:bg-slate-800"
