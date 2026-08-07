@@ -36,7 +36,7 @@ export default function AmbassadorCTA() {
         <div className="mt-12">
 
           <a
-            href="YOUR_GOOGLE_FORM_LINK"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScnbSyoDP3ocksoJ7qIUY8I4W5QxH4Z2ctuOwU2DUNDbvOiuw/viewform?usp=header"
             className="inline-flex rounded-xl bg-[#FF7A00] px-8 py-4 text-lg font-semibold text-white transition duration-300 hover:scale-105 hover:bg-orange-600"
           >
             Apply Now
