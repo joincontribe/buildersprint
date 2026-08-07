@@ -6,6 +6,7 @@ import WhoIsThisFor from "@/components/WhoIsThisFor";
 import Timeline from "@/components/Timeline";
 import CohortInfo from "@/components/CohortInfo";
 import Benefits from "@/components/Benefits";
+import BecomeAmbassador from "@/components/BecomeAmbassador";
 import FAQ from "@/components/FAQ";
 import Survey from "@/components/Survey";
 import CTA from "@/components/CTA";
@@ -24,6 +25,8 @@ export default function Home() {
                                                           <Timeline />
                                                                   <CohortInfo />
                                                                           <Benefits />
+
+<BecomeAmbassador />
                                                                                   <FAQ />
                                                                                           <Survey />
                                                                                                   <CTA />
