@@ -1,31 +1,46 @@
+import { BUILDER_SPRINT } from "@/lib/buildersprint";
+
 export default function CTA() {
-      return (
-          <section className="bg-orange-500 px-6 py-24 text-center text-white">
-                <div className="mx-auto max-w-4xl">
-                        <h2 className="text-5xl font-bold">
-                                  Ready to Build?
-                                          </h2>
+  return (
+    <section className="bg-orange-500 px-6 py-24 text-center text-white">
+      <div className="mx-auto max-w-4xl">
+        <h2 className="text-5xl font-bold">
+          Ready to Build?
+        </h2>
 
-                                                  <p className="mt-6 text-xl opacity-90">
-                                                            Registrations for Builder Sprint Cohort 1 are now open.
-                                                                    </p>
+        <p className="mt-6 text-xl opacity-90">
+          Registrations for Builder Sprint Cohort 1 are open
+          until{" "}
+          <span className="font-semibold">
+            {BUILDER_SPRINT.registrationDeadlineLabel}
+          </span>
+          .
+        </p>
 
-                                                                            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                                                                                      <a
-                                                                                                  href="https://docs.google.com/forms/d/e/1FAIpQLSecAUHEl8aOmYzpKMsver0eBMEmyAPaL76kgug1_ZzCFoUICQ/viewform?usp=publish-editor"
-                                                                                                              className="rounded-xl bg-white px-8 py-4 font-semibold text-orange-500"
-                                                                                                                        >
-                                                                                                                                    Register Now
-                                                                                                                                              </a>
+        <p className="mt-2 text-base opacity-80">
+          14 days. One real project. Start building.
+        </p>
 
-                                                                                                                                                        <a
-                                                                                                                                                                    href="https://linktr.ee/joincontribe"
-                                                                                                                                                                                className="rounded-xl border border-white px-8 py-4 font-semibold"
-                                                                                                                                                                                          >
-                                                                                                                                                                                                      Learn About CONTRIBE
-                                                                                                                                                                                                                </a>
-                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                  </section>
-                                                                                                                                                                                                                                    );
-                                                                                                                                                                                                                                    }
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSecAUHEl8aOmYzpKMsver0eBMEmyAPaL76kgug1_ZzCFoUICQ/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-white px-8 py-4 font-semibold text-orange-500 transition hover:bg-orange-50"
+          >
+            Register Now
+          </a>
+
+          <a
+            href="https://linktr.ee/joincontribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-orange-600"
+          >
+            Learn About CONTRIBE
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
