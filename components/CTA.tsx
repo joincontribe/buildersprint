@@ -1,43 +1,36 @@
-import { BUILDER_SPRINT } from "@/lib/buildersprint";
-
 export default function CTA() {
   return (
     <section className="bg-orange-500 px-6 py-24 text-center text-white">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-5xl font-bold">
-          Ready to Build?
+          Keep Building.
         </h2>
 
         <p className="mt-6 text-xl opacity-90">
-          Registrations for Builder Sprint Cohort 1 are open
-          until{" "}
-          <span className="font-semibold">
-            {BUILDER_SPRINT.registrationDeadlineLabel}
-          </span>
-          .
+          Builder Sprint registrations are closed, but building,
+          participating, and growing never ends at CONTRIBE.
         </p>
 
         <p className="mt-2 text-base opacity-80">
-          14 days. One real project. Start building.
+          Something big is coming this October. Until then, take part in what
+          we’re building.
         </p>
 
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSecAUHEl8aOmYzpKMsver0eBMEmyAPaL76kgug1_ZzCFoUICQ/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/ambassadors"
             className="rounded-xl bg-white px-8 py-4 font-semibold text-orange-500 transition hover:bg-orange-50"
           >
-            Register Now
+            Apply for Ambassador
           </a>
 
           <a
-            href="https://linktr.ee/joincontribe"
+            href="https://www.instagram.com/joincontribe?igsh=MTU3M3h5MG91NnZuZw=="
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-orange-600"
           >
-            Learn About CONTRIBE
+            Follow Builder Sprint Progress
           </a>
         </div>
       </div>

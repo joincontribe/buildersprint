@@ -11,28 +11,30 @@ import FAQ from "@/components/FAQ";
 import Survey from "@/components/Survey";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import BuilderSprintClosedModal from "@/components/BuilderSprintClosedModal";
 
 export default function Home() {
   return (
-      <>
-            <Navbar />
+    <>
+      <BuilderSprintClosedModal />
 
-                  <main>
-                          <Hero />
-                                  <Problem />
-                                          <Solution />
-                                                  <WhoIsThisFor />
-                                                          <Timeline />
-                                                                  <CohortInfo />
-                                                                          <Benefits />
+      <Navbar />
 
-<BecomeAmbassador />
-                                                                                  <FAQ />
-                                                                                          <Survey />
-                                                                                                  <CTA />
-                                                                                                        </main>
+      <main>
+        <Hero />
+        <Problem />
+        <Solution />
+        <WhoIsThisFor />
+        <Timeline />
+        <CohortInfo />
+        <Benefits />
+        <BecomeAmbassador />
+        <FAQ />
+        <Survey />
+        <CTA />
+      </main>
 
-                                                                                                              <Footer />
-                                                                                                                  </>
-                                                                                                                    );
-                                                                                                                    }
+      <Footer />
+    </>
+  );
+}
