@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const faqs = [
   {
     question: "Who can apply?",
@@ -42,13 +46,18 @@ const faqs = [
 ];
 
 export default function AmbassadorFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex((current) => (current === index ? null : index));
+  };
+
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-5xl px-6">
-
+        {/* HEADER */}
         <div className="text-center">
-
-          <span className="text-sm font-semibold uppercase tracking-wider text-[#FF7A00]">
+          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#FF7A00]">
             Frequently Asked Questions
           </span>
 
@@ -56,32 +65,69 @@ export default function AmbassadorFAQ() {
             Have Questions?
           </h2>
 
-          <p className="mt-6 text-lg text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             Here are answers to some common questions.
           </p>
-
         </div>
 
-        <div className="mt-16 space-y-6">
+        {/* FAQ ACCORDION */}
+        <div className="mt-16 space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
 
-          {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-2xl border border-gray-200 p-6 shadow-sm"
-            >
-              <h3 className="text-lg font-semibold text-gray-900">
-                {faq.question}
-              </h3>
+            return (
+              <div
+                key={faq.question}
+                className={`overflow-hidden rounded-2xl border bg-white transition ${
+                  isOpen
+                    ? "border-orange-300 shadow-sm"
+                    : "border-gray-200"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`ambassador-faq-answer-${index}`}
+                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left sm:px-7"
+                >
+                  <span className="text-base font-semibold text-gray-900 sm:text-lg">
+                    {faq.question}
+                  </span>
 
-              <p className="mt-3 leading-7 text-gray-600">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
+                  <span
+                    aria-hidden="true"
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xl font-medium transition ${
+                      isOpen
+                        ? "bg-[#FF7A00] text-white"
+                        : "bg-gray-100 text-gray-600"
+                    }`}
+                  >
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
 
+                <div
+                  id={`ambassador-faq-answer-${index}`}
+                  className={`grid transition-all duration-200 ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="border-t border-gray-100 px-6 pb-6 pt-5 sm:px-7">
+                      <p className="leading-7 text-gray-600">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
-          }
+}

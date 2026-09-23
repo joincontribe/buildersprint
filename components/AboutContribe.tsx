@@ -1,14 +1,10 @@
 export default function AboutContribe() {
   return (
-    <section
-      id="about"
-      className="bg-white py-24"
-    >
+    <section id="about" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
-
+        {/* HEADER */}
         <div className="mx-auto max-w-3xl text-center">
-
-          <span className="text-sm font-semibold uppercase tracking-wider text-[#FF7A00]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF7A00]">
             About CONTRIBE
           </span>
 
@@ -19,63 +15,59 @@ export default function AboutContribe() {
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-gray-600">
-            CONTRIBE is a community where students move beyond simply consuming
-            opportunities. We encourage them to participate, build meaningful
-            projects, and grow alongside others who are passionate about making
-            an impact.
+            CONTRIBE is a community where students move beyond simply
+            consuming opportunities. We encourage them to participate, build
+            meaningful projects, and grow alongside others who are passionate
+            about making an impact.
           </p>
-
         </div>
 
+        {/* PILLARS */}
         <div className="mt-20 grid gap-8 md:grid-cols-3">
+          {/* BUILD */}
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="mb-5 text-4xl" aria-hidden="true">
+              🚀
+            </div>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-900">Build</h3>
 
-            <div className="mb-4 text-4xl">🚀</div>
-
-            <h3 className="text-xl font-semibold text-gray-900">
-              Build
-            </h3>
-
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Create projects, solve problems, and turn ideas into action.
             </p>
-
           </div>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-
-            <div className="mb-4 text-4xl">🤝</div>
+          {/* PARTICIPATE */}
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="mb-5 text-4xl" aria-hidden="true">
+              🤝
+            </div>
 
             <h3 className="text-xl font-semibold text-gray-900">
               Participate
             </h3>
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Take part in initiatives, collaborate with others, and contribute
               to a growing student community.
             </p>
-
           </div>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          {/* GROW */}
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="mb-5 text-4xl" aria-hidden="true">
+              🌱
+            </div>
 
-            <div className="mb-4 text-4xl">🌱</div>
+            <h3 className="text-xl font-semibold text-gray-900">Grow</h3>
 
-            <h3 className="text-xl font-semibold text-gray-900">
-              Grow
-            </h3>
-
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Develop leadership, gain experience, and unlock new opportunities
               through continuous learning.
             </p>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
-      }
+}

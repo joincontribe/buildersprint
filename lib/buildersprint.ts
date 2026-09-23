@@ -1,7 +1,10 @@
 export const BUILDER_SPRINT = {
-  registrationDeadline: "2026-09-05T23:59:59+05:30",
-  registrationDeadlineLabel: "5 September 2026",
-  registrationWindowLabel: "1 August – 5 September",
-  onboardingPeriodLabel: "1–6 September",
-  sprintPeriodLabel: "7–20 September",
+  cohort: "Cohort 2",
+
+  registrationOpenDate: "2026-11-01T00:00:00+05:30",
+  registrationOpenDateLabel: "1 November 2026",
+
+  registrationStatusLabel: "Registrations open 1 November 2026",
+
+  sprintDurationLabel: "14 days",
 } as const;

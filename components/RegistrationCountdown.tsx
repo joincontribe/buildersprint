@@ -12,22 +12,16 @@ type TimeRemaining = {
 };
 
 function getTimeRemaining(): TimeRemaining {
-  const deadline = new Date(
-    BUILDER_SPRINT.registrationDeadline,
+  const openDate = new Date(
+    BUILDER_SPRINT.registrationOpenDate,
   ).getTime();
 
-  const total = Math.max(0, deadline - Date.now());
+  const total = Math.max(0, openDate - Date.now());
 
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (total / (1000 * 60 * 60)) % 24,
-  );
-  const minutes = Math.floor(
-    (total / (1000 * 60)) % 60,
-  );
-  const seconds = Math.floor(
-    (total / 1000) % 60,
-  );
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((total / (1000 * 60)) % 60);
+  const seconds = Math.floor((total / 1000) % 60);
 
   return {
     days,
@@ -53,10 +47,7 @@ export default function RegistrationCountdown() {
 
     updateCountdown();
 
-    const interval = window.setInterval(
-      updateCountdown,
-      1000,
-    );
+    const interval = window.setInterval(updateCountdown, 1000);
 
     return () => {
       window.clearInterval(interval);
@@ -65,10 +56,7 @@ export default function RegistrationCountdown() {
 
   if (!timeRemaining) {
     return (
-      <div
-        aria-hidden="true"
-        className="mt-8"
-      >
+      <div aria-hidden="true" className="mt-8">
         <div className="mx-auto h-24 max-w-xl animate-pulse rounded-2xl bg-slate-100" />
       </div>
     );
@@ -76,14 +64,13 @@ export default function RegistrationCountdown() {
 
   if (timeRemaining.total <= 0) {
     return (
-      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-red-200 bg-red-50 px-6 py-5 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
-          Registration closed
+      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-orange-200 bg-orange-50 px-6 py-5 text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF7A00]">
+          Registrations Open
         </p>
 
-        <p className="mt-2 text-sm text-red-700">
-          Builder Sprint registrations are no longer being
-          accepted.
+        <p className="mt-2 text-sm text-orange-800">
+          Builder Sprint {BUILDER_SPRINT.cohort} registrations are now open.
         </p>
       </div>
     );
@@ -112,10 +99,10 @@ export default function RegistrationCountdown() {
     <div
       className="mx-auto mt-8 max-w-xl"
       aria-live="polite"
-      aria-label={`Registration closes in ${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes, and ${timeRemaining.seconds} seconds`}
+      aria-label={`Builder Sprint ${BUILDER_SPRINT.cohort} registrations open in ${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes, and ${timeRemaining.seconds} seconds`}
     >
       <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-        Registration closes in
+        Registrations open in
       </p>
 
       <div className="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
@@ -136,8 +123,7 @@ export default function RegistrationCountdown() {
       </div>
 
       <p className="mt-3 text-center text-xs text-slate-400">
-        Deadline: {BUILDER_SPRINT.registrationDeadlineLabel} at
-        11:59 PM IST
+        Opening: {BUILDER_SPRINT.registrationOpenDateLabel}
       </p>
     </div>
   );
