@@ -8,6 +8,7 @@ import Solution from "@/components/Solution";
 import WhoIsThisFor from "@/components/WhoIsThisFor";
 import CohortInfo from "@/components/CohortInfo";
 import Benefits from "@/components/Benefits";
+import Survey from "@/components/Survey";
 import BecomeAmbassador from "@/components/BecomeAmbassador";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -22,40 +23,30 @@ export default function Home() {
       <Navbar />
 
       <main>
-        {/* Current CONTRIBE */}
         <Hero />
 
-        {/* Always-on community */}
         <BuilderNetwork />
 
-        {/* New recurring engagement layer */}
         <WeeklyActivities />
 
-        {/* How the weekly/community loop works */}
         <BuilderNetworkHowItWorks />
 
-        {/* What Cohort 1 accomplished */}
         <CohortOne />
 
-        {/* What Builder Sprint actually is */}
         <Solution />
 
-        {/* Who Builder Sprint is for */}
         <WhoIsThisFor />
 
-        {/* Cohort 2 / sprint information */}
         <CohortInfo />
 
-        {/* What builders get from the experience */}
         <Benefits />
 
-        {/* Secondary community pathway */}
+        <Survey />
+
         <BecomeAmbassador />
 
-        {/* Accordion FAQ */}
         <FAQ />
 
-        {/* Final conversion */}
         <CTA />
       </main>
 
