@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BUILDER_SPRINT } from "@/lib/buildersprint";
+
+import {
+  BUILDER_SPRINT,
+  getRegistrationStatus,
+} from "@/lib/buildersprint";
 
 type TimeRemaining = {
   days: number;
@@ -18,16 +22,11 @@ function getTimeRemaining(): TimeRemaining {
 
   const total = Math.max(0, openDate - Date.now());
 
-  const days = Math.floor(total / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((total / (1000 * 60)) % 60);
-  const seconds = Math.floor((total / 1000) % 60);
-
   return {
-    days,
-    hours,
-    minutes,
-    seconds,
+    days: Math.floor(total / 86_400_000),
+    hours: Math.floor((total / 3_600_000) % 24),
+    minutes: Math.floor((total / 60_000) % 60),
+    seconds: Math.floor((total / 1_000) % 60),
     total,
   };
 }
@@ -40,38 +39,87 @@ export default function RegistrationCountdown() {
   const [timeRemaining, setTimeRemaining] =
     useState<TimeRemaining | null>(null);
 
+  const [registrationStatus, setRegistrationStatus] =
+    useState<ReturnType<typeof getRegistrationStatus> | null>(
+      null,
+    );
+
   useEffect(() => {
-    const updateCountdown = () => {
+    function updateState() {
       setTimeRemaining(getTimeRemaining());
-    };
+      setRegistrationStatus(getRegistrationStatus());
+    }
 
-    updateCountdown();
+    updateState();
 
-    const interval = window.setInterval(updateCountdown, 1000);
+    const interval = window.setInterval(updateState, 1000);
 
     return () => {
       window.clearInterval(interval);
     };
   }, []);
 
-  if (!timeRemaining) {
+  if (!timeRemaining || !registrationStatus) {
     return (
-      <div aria-hidden="true" className="mt-8">
-        <div className="mx-auto h-24 max-w-xl animate-pulse rounded-2xl bg-slate-100" />
+      <div
+        aria-hidden="true"
+        className="mx-auto mt-8 h-24 max-w-xl animate-pulse rounded-2xl bg-slate-100"
+      />
+    );
+  }
+
+  if (registrationStatus === "open") {
+    return (
+      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-green-200 bg-green-50 px-6 py-6 text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">
+          Registrations Open
+        </p>
+
+        <p className="mt-2 text-sm leading-6 text-green-800">
+          Builder Sprint {BUILDER_SPRINT.cohort} registration
+          is available.
+        </p>
+
+        <a
+          href={BUILDER_SPRINT.registrationFormUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center justify-center rounded-xl bg-green-700 px-6 py-3 font-bold text-white transition hover:bg-green-800"
+        >
+          Register Now
+          <span className="ml-2" aria-hidden="true">
+            →
+          </span>
+        </a>
       </div>
     );
   }
 
-  if (timeRemaining.total <= 0) {
+  if (registrationStatus === "awaiting-form") {
     return (
-      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-orange-200 bg-orange-50 px-6 py-5 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF7A00]">
-          Registrations Open
+      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-orange-200 bg-orange-50 px-6 py-6 text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-700">
+          Registration Link Pending
         </p>
 
-        <p className="mt-2 text-sm text-orange-800">
-          Builder Sprint {BUILDER_SPRINT.cohort} registrations are now open.
+        <p className="mt-3 text-sm leading-7 text-orange-900">
+          The registration opening date has arrived, but
+          the registration form link has not been configured.
+          Please check the official CONTRIBE channels for
+          updates.
         </p>
+
+        <a
+          href="https://discord.gg/GZ95dR5t9K"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center justify-center rounded-xl border border-orange-300 px-6 py-3 font-bold text-orange-800 transition hover:bg-orange-100"
+        >
+          Follow CONTRIBE Updates
+          <span className="ml-2" aria-hidden="true">
+            ↗
+          </span>
+        </a>
       </div>
     );
   }
@@ -96,12 +144,8 @@ export default function RegistrationCountdown() {
   ];
 
   return (
-    <div
-      className="mx-auto mt-8 max-w-xl"
-      aria-live="polite"
-      aria-label={`Builder Sprint ${BUILDER_SPRINT.cohort} registrations open in ${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes, and ${timeRemaining.seconds} seconds`}
-    >
-      <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+    <div className="mx-auto mt-8 max-w-xl">
+      <p className="text-center text-sm font-bold uppercase tracking-[0.2em] text-slate-500">
         Registrations open in
       </p>
 
@@ -115,14 +159,14 @@ export default function RegistrationCountdown() {
               {unit.value}
             </div>
 
-            <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500 sm:text-xs">
+            <div className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-xs">
               {unit.label}
             </div>
           </div>
         ))}
       </div>
 
-      <p className="mt-3 text-center text-xs text-slate-400">
+      <p className="mt-3 text-center text-xs text-slate-500">
         Opening: {BUILDER_SPRINT.registrationOpenDateLabel}
       </p>
     </div>

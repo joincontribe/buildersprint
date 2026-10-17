@@ -1,107 +1,125 @@
 const steps = [
   {
     number: "01",
-    title: "See It",
+    title: "Join",
     description:
-      "A new activity, opportunity, challenge, or community moment drops.",
+      "Enter the CONTRIBE community and discover what other builders are working on.",
+    icon: "↗",
   },
   {
     number: "02",
-    title: "Pick One",
+    title: "Connect",
     description:
-      "Choose something that interests you. You don't have to do everything.",
+      "Meet people with different interests, exchange ideas, and start conversations.",
+    icon: "↔",
   },
   {
     number: "03",
-    title: "Do It",
+    title: "Participate",
     description:
-      "Build, learn, create, connect, or take on the challenge. Start small and make it happen.",
+      "Take part in weekly activities, challenges, discussions, and community initiatives.",
+    icon: "+",
   },
   {
     number: "04",
-    title: "Share It",
+    title: "Build",
     description:
-      "Share what you made, learned, discovered, or experienced with the community.",
-  },
-  {
-    number: "05",
-    title: "Keep Going",
-    description:
-      "Come back the next week, find something new, and keep your momentum alive.",
+      "Turn what interests you into action, share your progress, and keep improving.",
+    icon: "↗",
   },
 ];
 
 export default function BuilderNetworkHowItWorks() {
   return (
-    <section className="bg-slate-50 px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="community-journey"
+      className="bg-slate-50 px-6 py-24 sm:px-8"
+    >
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-500">
-            THE LOOP
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+            HOW THE COMMUNITY WORKS
           </p>
 
-          <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-            One community.
+          <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-6xl">
+            Four steps.
             <span className="block text-orange-500">
-              Every week.
+              Keep moving.
             </span>
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            The Builder Network is designed to make participation simple.
-            You don't need a huge goal every week. You just need a reason to
-            take one step forward.
+            You don't need a perfect plan to get started. Join the community,
+            meet people, participate in something, and take your next step.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-5">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <div
+            <article
               key={step.number}
-              className="relative rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+              className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-orange-300 hover:shadow-lg sm:p-8"
             >
               <div className="flex items-center justify-between">
-                <span className="text-sm font-bold tracking-widest text-orange-500">
+                <span className="text-sm font-black tracking-[0.2em] text-orange-500">
                   {step.number}
                 </span>
 
-                {index < steps.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="hidden text-slate-300 md:block"
-                  >
-                    →
-                  </span>
-                )}
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-50 text-2xl font-bold text-orange-500"
+                >
+                  {step.icon}
+                </span>
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold text-slate-900">
+              <h3 className="mt-9 text-2xl font-black text-slate-950">
                 {step.title}
               </h3>
 
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 {step.description}
               </p>
-            </div>
+
+              {index < steps.length - 1 && (
+                <div
+                  aria-hidden="true"
+                  className="absolute bottom-7 right-7 hidden text-xl font-bold text-orange-200 lg:block"
+                >
+                  →
+                </div>
+              )}
+            </article>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <p className="text-xl font-bold text-slate-900 md:text-2xl">
-            See it.
-            <span className="mx-2 text-orange-500">→</span>
-            Pick one.
-            <span className="mx-2 text-orange-500">→</span>
-            Do it.
-            <span className="mx-2 text-orange-500">→</span>
-            Share it.
-            <span className="mx-2 text-orange-500">→</span>
-            Keep going.
+        <div className="mt-12 rounded-3xl bg-[#0F172A] px-6 py-10 text-center text-white sm:px-10 sm:py-12">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange-400">
+            THERE'S NO PERFECT TIME TO START
           </p>
 
-          <p className="mt-3 text-sm text-slate-500">
-            That's how small actions turn into momentum.
+          <h3 className="mx-auto mt-4 max-w-3xl text-3xl font-black leading-tight md:text-4xl">
+            You don't have to do everything.
+            <span className="block text-orange-400">
+              Just take the next step.
+            </span>
+          </h3>
+
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
+            Participate at your own pace. Share your work if you want to.
+            Learn from other builders and return whenever you're ready for
+            another step.
           </p>
+
+          <a
+            href="#builder-network"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-orange-500 px-7 py-4 font-bold text-white transition hover:bg-orange-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Find Your Community
+            <span aria-hidden="true" className="ml-2">
+              →
+            </span>
+          </a>
         </div>
       </div>
     </section>

@@ -1,43 +1,78 @@
 import Image from "next/image";
 
-const exploreLinks = [
-  { label: "Builder Network", href: "#builder-network" },
-  { label: "Weekly Activities", href: "#weekly-activities" },
-  { label: "Builder Sprint", href: "#builder-sprint" },
-  { label: "FAQ", href: "#faq" },
-];
+import {
+  CONTRIBE_LINKS,
+  INSIGHTBOLT_LINKS,
+} from "@/lib/buildersprint";
 
-const getInvolvedLinks = [
-  { label: "Join Builder Network", href: "#builder-network" },
-  { label: "Become an Ambassador", href: "/ambassadors" },
+const exploreLinks = [
   {
-    label: "Linktree",
-    href: "https://linktr.ee/joincontribe",
+    label: "Builder Network",
+    href: "/#builder-network",
   },
   {
-    label: "Instagram",
-    href: "https://www.instagram.com/joincontribibe",
+    label: "Weekly Activities",
+    href: "/#weekly-activities",
+  },
+  {
+    label: "Builder Sprint",
+    href: "/#builder-sprint",
+  },
+  {
+    label: "InsightBolt Partnership",
+    href: "/#insightbolt-partnership",
+  },
+  {
+    label: "Frequently Asked Questions",
+    href: "/#faq",
+  },
+];
+
+const communityLinks = [
+  {
+    label: "Join Discord",
+    href: CONTRIBE_LINKS.discord,
+    external: true,
+  },
+  {
+    label: "WhatsApp Channel",
+    href: CONTRIBE_LINKS.whatsapp,
+    external: true,
+  },
+  {
+    label: "CONTRIBE Linktree",
+    href: CONTRIBE_LINKS.linktree,
+    external: true,
+  },
+  {
+    label: "Ambassador Programme",
+    href: "/ambassadors",
+    external: false,
+  },
+  {
+    label: "Terms & Conditions",
+    href: INSIGHTBOLT_LINKS.terms,
+    external: false,
   },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-[#0F172A] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
-          {/* BRAND */}
+      <div className="mx-auto max-w-7xl px-6 py-14 sm:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
           <div className="max-w-sm">
             <a
-              href="#top"
+              href="/"
               className="inline-flex items-center gap-3 transition hover:opacity-90"
-              aria-label="CONTRIBE Home"
+              aria-label="CONTRIBE homepage"
             >
               <Image
                 src="/logo.png"
-                alt="CONTRIBE Logo"
-                width={52}
-                height={52}
-                className="h-12 w-12 object-contain"
+                alt="CONTRIBE"
+                width={48}
+                height={48}
+                className="h-11 w-11 object-contain"
               />
 
               <span className="text-xl font-bold tracking-wide">
@@ -45,91 +80,102 @@ export default function Footer() {
               </span>
             </a>
 
-            <p className="mt-5 text-sm leading-7 text-slate-400">
+            <p className="mt-5 text-lg font-semibold text-white">
               Build. Participate. Grow.
             </p>
 
-            <p className="mt-4 max-w-xs text-sm leading-7 text-slate-400">
-              A community for young builders to discover opportunities,
-              participate, create, and keep moving forward.
+            <p className="mt-3 text-sm leading-7 text-slate-400">
+              A community for young people who want to turn
+              ideas into action, connect with other builders,
+              and keep creating.
             </p>
+
+            <a
+              href={CONTRIBE_LINKS.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center rounded-xl bg-orange-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+            >
+              Join the Community →
+            </a>
           </div>
 
-          {/* EXPLORE */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-200">
               Explore
-            </h3>
+            </h2>
 
-            <div className="mt-5 space-y-3">
+            <nav
+              aria-label="Footer navigation"
+              className="mt-5 space-y-4"
+            >
               {exploreLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-sm text-slate-400 transition hover:text-[#FF7A00]"
+                  className="block text-sm text-slate-400 transition hover:text-orange-400"
                 >
                   {link.label}
                 </a>
               ))}
-            </div>
+            </nav>
           </div>
 
-          {/* GET INVOLVED */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-200">
               Get Involved
-            </h3>
+            </h2>
 
-            <div className="mt-5 space-y-3">
-              {getInvolvedLinks.map((link) => (
+            <nav
+              aria-label="Community and legal links"
+              className="mt-5 space-y-4"
+            >
+              {communityLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  target={
-                    link.href.startsWith("http") ? "_blank" : undefined
-                  }
+                  target={link.external ? "_blank" : undefined}
                   rel={
-                    link.href.startsWith("http")
+                    link.external
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="block text-sm text-slate-400 transition hover:text-[#FF7A00]"
+                  className="block text-sm text-slate-400 transition hover:text-orange-400"
                 >
                   {link.label}
+                  {link.external && (
+                    <span className="ml-1" aria-hidden="true">
+                      ↗
+                    </span>
+                  )}
                 </a>
               ))}
-            </div>
+            </nav>
           </div>
         </div>
 
-        {/* DIVIDER */}
-        <div className="my-12 h-px bg-slate-800" />
+        <div className="my-10 h-px bg-slate-800 sm:my-12" />
 
-        {/* BOTTOM */}
-        <div className="flex flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 CONTRIBE. All rights reserved.</p>
+        <div className="flex flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} CONTRIBE. All rights
+            reserved.
+          </p>
 
           <p>
             Made with{" "}
-            <span aria-label="love" className="text-red-400">
+            <span className="text-red-400" aria-label="love">
               ♥
             </span>{" "}
             by{" "}
             <a
-              href="https://www.instagram.com/insightbolt.enquiries"
+              href={INSIGHTBOLT_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-slate-300 transition hover:text-[#FF7A00]"
+              className="font-semibold text-slate-300 transition hover:text-orange-400"
             >
               InsightBolt
             </a>
-          </p>
-        </div>
-
-        {/* CLOSING LINE */}
-        <div className="mt-8 text-center">
-          <p className="text-sm font-medium tracking-wide text-slate-600">
-            The sprint ends. The building doesn&apos;t.
           </p>
         </div>
       </div>
