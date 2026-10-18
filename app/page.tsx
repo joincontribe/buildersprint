@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 import BuilderNetwork from "@/components/BuilderNetwork";
 import WeeklyActivities from "@/components/WeeklyActivities";
 import BuilderNetworkHowItWorks from "@/components/BuilderNetworkHowItWorks";
@@ -21,8 +22,8 @@ import InsightBoltOfferPopup from "@/components/InsightBoltOfferPopup";
 export default function Home() {
   return (
     <main>
+      <Navbar />
       <Hero />
-
 <CohortInfo />
 
 <Timeline />
