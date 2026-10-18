@@ -151,7 +151,7 @@ export default function BuilderNetwork() {
         <div className="mt-14 text-center">
           <p className="text-lg font-semibold text-slate-300">
             Discord is where you connect.
-            <br>WhatsApp is where you stay in the loop.</br>
+            <br />WhatsApp is where you stay in the loop
           </p>
         </div>
       </div>
