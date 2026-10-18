@@ -39,7 +39,7 @@ const slides = [
   {
     id: "builder-network",
     eyebrow: "THE BUILDER NETWORK",
-    title: "The Sprint Ends. <br /> The Building Doesn't.",
+    title: "The Sprint Ends. The Building Doesn't.",
     description:
       "Find your people. Share ideas. Build together. Keep participating beyond the sprint.",
     image: "/images/hero-builder-network.webp",
