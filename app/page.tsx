@@ -23,41 +23,41 @@ export default function Home() {
     <main>
       <Hero />
 
-      <BuilderNetwork />
+<CohortInfo />
 
-      <WeeklyActivities />
+<Timeline />
 
-      <BuilderNetworkHowItWorks />
+<Solution />
 
-      <CohortOne />
+<CohortOne />
 
-      <Solution />
+<Benefits />
 
-      <BuildingTogether />
+<WhoIsThisFor />
 
-      <Timeline />
+<BuilderNetworkHowItWorks />
 
-      <WhoIsThisFor />
+<BuildingTogether />
 
-      <CohortInfo />
+<BuilderNetwork />
 
-      <InsightBoltBanner />
+<WeeklyActivities />
 
-      <InsightBoltPartnership />
+<InsightBoltBanner />
 
-      <Benefits />
+<InsightBoltPartnership />
 
-      <BecomeAmbassador />
+<BecomeAmbassador />
 
-      <FAQ />
+<FAQ />
 
-      <Survey />
+<Survey />
 
-      <CTA />
+<CTA />
 
-      <Footer />
+<Footer />
 
-      <InsightBoltOfferPopup />
+<InsightBoltOfferPopup />
     </main>
   );
 }
