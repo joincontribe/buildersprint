@@ -13,7 +13,7 @@ const slides = [
   {
     id: "builder-sprint",
     eyebrow: "CONTRIBE BUILDER SPRINT · COHORT 2",
-    title: "14 Days. One Project.<br /> Real Progress.",
+    title: "14 Days. One Project. Real Progress.",
     description:
       "You build it. We guide you forward. Turn an idea into something real.",
     image: "/images/hero-builder-sprint.webp",
@@ -26,7 +26,7 @@ const slides = [
   {
     id: "insightbolt",
     eyebrow: "CONTRIBE × INSIGHTBOLT",
-    title: "Build It. Ship It.<br /> Get Recognised.",
+    title: "Build It. Ship It. Get Recognised.",
     description:
       "Eligible Builder Sprint Cohort 2 project submitters can qualify for 50% off one eligible InsightBolt monthly plan for three months.",
     image: "/images/hero-insightbolt-offer.webp",
@@ -39,7 +39,7 @@ const slides = [
   {
     id: "builder-network",
     eyebrow: "THE BUILDER NETWORK",
-    title: "The Sprint Ends.<br /> The Building Doesn't.",
+    title: "The Sprint Ends. <br /> The Building Doesn't.",
     description:
       "Find your people. Share ideas. Build together. Keep participating beyond the sprint.",
     image: "/images/hero-builder-network.webp",
@@ -52,7 +52,7 @@ const slides = [
   {
     id: "weekly-activities",
     eyebrow: "WEEKLY ACTIVITIES",
-    title: "Small Builds.<br /> Real Progress.",
+    title: "Small Builds. Real Progress.",
     description:
       "Show up, try something new, and build every week with CONTRIBE.",
     image: "/images/hero-weekly-activities.webp",
