@@ -10,7 +10,7 @@ export const BUILDER_SPRINT = {
   registrationOpenDate: "2026-11-01T00:00:00+05:30",
   registrationOpenDateLabel: "1 November 2026",
   registrationStatusLabel: "Registrations open 1 November 2026",
-  registrationFormUrl: "",
+  registrationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSecAUHEl8aOmYzpKMsver0eBMEmyAPaL76kgug1_ZzCFoUICQ/viewform?usp=header",
 
   // Onboarding
   onboardingStartDate: "2026-12-01",
